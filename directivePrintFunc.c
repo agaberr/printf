@@ -25,6 +25,15 @@ int getRightPrint(char type, va_list args)
 		case '%':
 			n = printMod();
 			break;
+
+		case 'd':
+			n = printNumber(va_arg(args, int));
+			break;
+
+		case 'i':
+			n = printNumber(va_arg(args, int));
+			break;
+
 	}
 
 	return (n);
@@ -59,6 +68,32 @@ int printString(char *str)
 
 	for (i = 0; i < strlen(str); i++)
 		_putchar(str[i]);
+
+	return (i);
+}
+
+/**
+* printNumber - print number
+* @num: number to print
+*
+* Return: number of character printed
+*/
+int printNumber(int num)
+{
+	unsigned int i = 0;
+
+	if (num < 0)
+	{
+		_putchar('-');
+		i++;
+		num = -num;
+	}
+
+	if (num / 10 != 0)
+		printNumber(num / 10);
+
+	_putchar(num % 10 + '0');
+	i++;
 
 	return (i);
 }

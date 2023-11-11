@@ -31,6 +31,12 @@ int _printf(const char *format, ...)
 			numChar += getRightPrint(format[i + 1], args);
 			i++;
 		}
+		else if (format[i] == '/' && format[i + 1] == 'n')
+		{
+			_putchar('\n');
+			i++;
+			numChar++;
+		}
 		else
 		{
 			_putchar(format[i]);

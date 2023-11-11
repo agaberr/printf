@@ -12,6 +12,7 @@ unsigned int countArgs(const char *format);
 int getRightPrint(char type, va_list args);
 int printChar(char c);
 int printString(char *str);
+int printNumber(int num);
 int printMod(void);
 
 int _printf(const char *format, ...);
