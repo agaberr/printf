@@ -55,7 +55,7 @@ int printChar(char c)
 */
 int printString(char *str)
 {
-	int i;
+	unsigned long int i;
 
 	for (i = 0; i < strlen(str); i++)
 		_putchar(str[i]);

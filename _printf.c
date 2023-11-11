@@ -11,14 +11,15 @@
 
 int _printf(const char *format, ...)
 {
-	if (!format)
-		return (0);
-
-	/*unsigned int numArgs = countArgs(format);*/
 
 	int i, numChar = 0;
 
 	va_list args;
+
+	if (!format)
+		return (0);
+
+	/*unsigned int numArgs = countArgs(format);*/
 
 	va_start(args, format);
 
