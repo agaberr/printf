@@ -16,7 +16,7 @@ int _printf(const char *format, ...)
 
 	va_list args;
 
-	if (!format)
+	if (format == NULL || strlen(format) == 0)
 		return (0);
 
 	/*unsigned int numArgs = countArgs(format);*/
