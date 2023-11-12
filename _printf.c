@@ -16,10 +16,11 @@ int _printf(const char *format, ...)
 
 	va_list args;
 
+	int (*print_func)(va_list) = NULL;
+
+
 	if (format == NULL || strlen(format) == 0)
 		return (0);
-
-	/*unsigned int numArgs = countArgs(format);*/
 
 	va_start(args, format);
 
@@ -28,7 +29,8 @@ int _printf(const char *format, ...)
 
 		if (format[i] == '%')
 		{
-			numChar += getRightPrint(format[i + 1], args);
+			print_func = get_print_func(format[i + 1]);
+			numChar += print_func(args);
 			i++;
 		}
 		else
