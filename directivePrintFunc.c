@@ -33,6 +33,21 @@ int getRightPrint(char type, va_list args)
 		case 'i':
 			n = printNumber(va_arg(args, int));
 			break;
+		case 'b':
+			n = Print_Binary(va_arg(args, unsigned int));
+			break;
+		case 'u':
+			n = Print_Base_10(va_arg(args, unsigned int));
+			break;
+		case 'o':
+			n = Print_Base_8(va_arg(args, unsigned int));
+			break;
+		case 'x':
+			n = Print_Base_16_upper(va_arg(args, unsigned int));
+			break;
+		case 'X':
+			n = Print_Base_16_lower(va_arg(args, unsigned int));
+			break;
 
 	}
 
