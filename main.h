@@ -29,6 +29,11 @@ int print_char(va_list args);
 int print_string(va_list args);
 int print_number(va_list args);
 int print_mod(va_list args);
+int Print_Binary(va_list args);
+int Print_Base_10(va_list args);
+int Print_Base_16_upper(va_list args);
+int Print_Base_16_lower(va_list args);
+int Print_Base_8(va_list args);
 
 int _printf(const char *format, ...);
 

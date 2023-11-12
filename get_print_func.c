@@ -15,6 +15,11 @@ int (*get_print_func(const char format))(va_list)
 		{'d', print_number},
 		{'i', print_number},
 		{'%', print_mod},
+		{'b', Print_Binary},
+		{'u', Print_Base_10},
+		{'o', Print_Base_8},
+		{'x', Print_Base_16_lower},
+		{'X', Print_Base_16_upper},
 		{'\0', NULL}
 	};
 
