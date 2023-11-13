@@ -39,19 +39,30 @@ char *rot13(char *str)
 
 	char *str_copy = malloc(strlen(str));
 
-	char alphabet[] = {"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"};
+	char alphabet[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 
-	char rot13Alpha[] = {"NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm"};
+	char rot13Alpha[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 
 	int i, j;
 
 	for (i = 0; str[i]; i++)
-		for (j = 0; alphabet[j]; j++)
-			if (str[i] == alphabet[j])
+	{
+		if ((str[i] >= 'A' && str[i] <= 'Z') || (str[i] >= 'a' && str[i] <= 'z'))
+		{
+			for (j = 0; alphabet[j]; j++)
 			{
-				str_copy[i] = (rot13Alpha[j]);
-				break;
+				if (str[i] == alphabet[j])
+				{
+					str_copy[i] = rot13Alpha[j];
+					break;
+				}
 			}
+		}
+		else
+		{
+			str_copy[i] = str[i];
+		}
+	}
 
 	return (str_copy);
 }
