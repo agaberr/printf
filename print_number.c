@@ -15,6 +15,12 @@ int print_number(va_list args)
 	int i, j;
 	char *min = "-2147483648";
 
+	if (num == 0)
+        {
+                _putchar('0');
+                return (1);
+        }
+
 	if (num == INT_MIN)
 	{
 		for(j = 0; min[j]; j++)
@@ -43,7 +49,7 @@ int num_recursion(int num)
 	if (num == 0)
 	{
 		_putchar('0');
-		return ('0');
+		return (1);
 	}
 	if (num < 0)
 	{
@@ -56,6 +62,6 @@ int num_recursion(int num)
 		i += num_recursion(num / 10);
 
 	_putchar(num % 10 + '0');
-	return (1);
+	return (i + 1);
 
 }
