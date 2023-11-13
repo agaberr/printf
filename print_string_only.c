@@ -34,7 +34,7 @@ int print_string_only(va_list args)
 	int count = 0;
 
 	if (str == NULL)
-		str = "";
+		str = "(null)";
 
 	while (*str != '\0')
 	{
