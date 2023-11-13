@@ -1,12 +1,31 @@
 #include "main.h"
 /**
+* print_non_alpha - print character that is not alpha
+* @c: character to print
+*
+* Return: number of chars printed
+*/
+
+int print_non_alpha(char c)
+{
+
+	int i = 0;
+
+	int num = (int)c;
+
+	_putchar('\\');
+	_putchar('x');
+	i += Print_Base_16_int(num);
+
+	return (i);
+}
+
+/**
 * print_string_only - print string
-=* @c: character to print
+* @args: str to print
 *
 * Return: number of character printed
 */
-
-int print_non_alpha(char c);
 
 int print_string_only(va_list args)
 {
@@ -38,23 +57,3 @@ int print_string_only(va_list args)
 	return (count);
 }
 
-/**
-* print_non_alpha - print character that is not alpha
-* @c: character to print
-*
-* Return: number of chars printed
-*/
-
-int print_non_alpha(char c)
-{
-
-	int i = 0;
-
-	int num = (int)c;
-
-	_putchar('\\');
-	_putchar('x');
-	i += Print_Base_16_int(num);
-
-	return (i);
-}
