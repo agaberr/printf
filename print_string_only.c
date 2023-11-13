@@ -9,15 +9,13 @@
 int print_non_alpha(char c)
 {
 
-	int i = 0;
-
 	int num = (int)c;
 
 	_putchar('\\');
 	_putchar('x');
-	i += Print_Base_16_int(num);
+	Print_Base_16_int(num);
 
-	return (i);
+	return (4);
 }
 
 /**

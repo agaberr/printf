@@ -78,6 +78,7 @@ int main(void)
 	printf("%d\n",printf("Edge: %c %s %%", '\0', "test"));
 	printf("%d\n",_printf("Edge: %c %s %%", 'X', NULL));
 	_printf("%S\n", "Best\nSchool"); /*should print ->  Best\x0ASchool*/
+	printf("%d\n", _printf("%S\n", "Best\nSchool")); /*should print ->  15*/
 	/*printf("%d\n",printf("Edge: %c %s %%", 'X', NULL));*/
 	_printf("%r\n", "reversed string");
 	printf("%d\n",_printf("%R\n", "AZ")); /*should print -> NMOPQR*/
