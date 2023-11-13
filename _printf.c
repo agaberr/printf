@@ -29,6 +29,11 @@ int _printf(const char *format, ...)
 
 		if (format[i] == '%')
 		{
+			if (format[i + 1] == '\0')
+			{
+				break;
+			}
+
 			print_func = get_print_func(format[i + 1]);
 			numChar += print_func(args);
 			i++;
