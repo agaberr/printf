@@ -24,10 +24,10 @@ int (*get_print_func(const char format))(va_list)
 		{'\0', NULL}
 	};
 
-	if (format == NULL)
-		return (NULL);
-
 	int i = 0;
+
+	if (!format)
+		return (NULL);
 
 	while (ops[i].op)
 	{
