@@ -8,11 +8,17 @@
 int print_string(va_list args)
 {
 	char *str = va_arg(args, char *);
+	int count = 0;
 
-	unsigned long int i;
+	if (str == NULL)
+		str = "(null)";
 
-	for (i = 0; i < strlen(str); i++)
-		_putchar(str[i]);
+	while (*str != '\0')
+	{
+		count++;
+		_putchar(*str++);
 
-	return (i);
+	}
+
+	return (count);
 }
