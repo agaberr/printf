@@ -21,6 +21,8 @@ int (*get_print_func(const char format))(va_list)
 		{'x', Print_Base_16_lower},
 		{'X', Print_Base_16_upper},
 		{'S', print_string_only},
+		{'r', print_rev_string},
+		{'R', print_rot13},
 		{'\0', NULL}
 	};
 

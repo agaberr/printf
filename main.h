@@ -5,6 +5,8 @@
 #include <stddef.h>
 #include <string.h>
 #include <limits.h>
+#include <stdio.h>
+#include <stdlib.h>
 
 
 int _putchar(char c);
@@ -37,6 +39,8 @@ int Print_Base_16_int(int num);
 int Print_Base_16_lower(va_list args);
 int Print_Base_8(va_list args);
 int print_string_only(va_list args);
+int print_rev_string(va_list args);
+int print_rot13(va_list args);
 
 int _printf(const char *format, ...);
 

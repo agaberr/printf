@@ -79,6 +79,8 @@ int main(void)
 	printf("%d\n",_printf("Edge: %c %s %%", 'X', NULL));
 	_printf("%S\n", "Best\nSchool"); /*should print ->  Best\x0ASchool*/
 	/*printf("%d\n",printf("Edge: %c %s %%", 'X', NULL));*/
+	_printf("%r\n", "reversed string");
+	_printf("%R\n", "ABCDEF"); /*should print -> NMOPQR*/
 
 	/*_printf("Address:[%p]\n", addr);*/
     printf("Address:[%p]\n", addr);

@@ -35,10 +35,7 @@ int _printf(const char *format, ...)
 			}
 
 			print_func = get_print_func(format[i + 1]);
-			if (print_func != NULL)
-                numChar += print_func(args);
-            else
-                _putchar('%');
+			numChar += print_func(args);
 			i++;
 		}
 		else
