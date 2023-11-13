@@ -20,6 +20,7 @@ int (*get_print_func(const char format))(va_list)
 		{'o', Print_Base_8},
 		{'x', Print_Base_16_lower},
 		{'X', Print_Base_16_upper},
+		{'S', print_string_only},
 		{'\0', NULL}
 	};
 

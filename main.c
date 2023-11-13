@@ -67,11 +67,14 @@ int main(void)
 	printf("%d\n",printf("Invalid: %d", 42));
 	printf("%d\n",_printf("Mix: %c %s %%", 'K', "Mixed Specifiers"));
 	printf("%d\n",printf("Mix: %c %s %%", 'K', "Mixed Specifiers"));
+
+	/*ERROR HERE*/
 	printf("%d\n",_printf("Escape: %% %c %s", 'R', "Escape Test"));
 	printf("%d\n",printf("Escape: %% %c %s", 'R', "Escape Test"));
 	printf("%d\n",_printf("Edge: %c %s %%", '\0', "test"));
 	printf("%d\n",printf("Edge: %c %s %%", '\0', "test"));
 	printf("%d\n",_printf("Edge: %c %s %%", 'X', NULL));
+	_printf("%S\n", "Best\nSchool"); /*should print ->  Best\x0ASchool*/
 	/*printf("%d\n",printf("Edge: %c %s %%", 'X', NULL));*/
 
 	return (0);
