@@ -12,35 +12,50 @@ int print_number(va_list args)
 {
 
 	int num = va_arg(args, int);
+	int i, j;
+	char *min = "-2147483648";
 
-	num_recursion(num);
-	return (num);
+	if (num == INT_MIN)
+	{
+		for(j = 0; min[j]; j++)
+		{
+			_putchar(min[j]);
+		}
+		return (j);
+	}
+
+	i = num_recursion(num);
+	return (i);
 }
 /**
 * num_recursion - print number
 * @num: number to print
 *
-* Return: number of character printed
+* Return: None
 */
 
 int num_recursion(int num)
 {
+	
+	int i = 0;
 
-	unsigned int i = 0;
 
+	if (num == 0)
+	{
+		_putchar('0');
+		return ('0');
+	}
 	if (num < 0)
 	{
 		_putchar('-');
 		i++;
-		num = -num;
+		num *= -1;
 	}
 
 	if (num / 10 != 0)
-		num_recursion(num / 10);
+		i += num_recursion(num / 10);
 
 	_putchar(num % 10 + '0');
-	i++;
-
-	return (i);
+	return (1);
 
 }

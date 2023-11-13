@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stdio.h>
+#include <limits.h>
 
 int main(void)
 {
@@ -30,6 +31,20 @@ int main(void)
 	printf("%X\n", 1234);
 	_printf("%o\n", 1234);
 	printf("%o\n", 1234);
+	printf("%d\n",_printf("%d\n", 42));
+	printf("%d\n",printf("%d\n", 42));
+	printf("%d\n",_printf("%d\n", -42));
+	printf("%d\n",printf("%d\n", -42));
+	printf("%d\n",_printf("%d\n", 0));
+	printf("%d\n",printf("%d\n", 0));
+	printf("%d\n",_printf("%d\n", 2147483647));
+	printf("%d\n",printf("%d\n", 2147483647));
+	printf("%d\n",_printf("%d\n", -2147483647));
+	printf("%d\n",printf("%d\n", -2147483647));
+	printf("%d\n",_printf("%d\n", INT_MAX));
+	printf("%d\n",printf("%d\n", INT_MAX));
+	printf("%d\n",_printf("%d\n", INT_MIN));
+	printf("%d\n",printf("%d\n", INT_MIN));
 
 	return (0);
 }
