@@ -37,7 +37,7 @@ int print_rot13(va_list args)
 char *rot13(char *str)
 {
 
-	char *str_copy = malloc(strlen(str) + 1);
+	char *str_copy = malloc(strlen(str));
 
 	char alphabet[] = {"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"};
 
