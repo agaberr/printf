@@ -68,7 +68,6 @@ int main(void)
 	printf("%d\n",_printf("Mix: %c %s %%", 'K', "Mixed Specifiers"));
 	printf("%d\n",printf("Mix: %c %s %%", 'K', "Mixed Specifiers"));
 
-	/*ERROR HERE*/
 	printf("%d\n",_printf("Escape: %% %c %s", 'R', "Escape Test"));
 	printf("%d\n",printf("Escape: %% %c %s", 'R', "Escape Test"));
 	printf("%d\n",_printf("Edge: %c %s %%", '\0', "test"));

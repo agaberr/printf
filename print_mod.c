@@ -7,7 +7,8 @@
 */
 int print_mod(va_list args)
 {
-	va_arg(args, void *);
+	(void)args;
+
 	_putchar('%');
 	return (1);
 }
