@@ -37,13 +37,16 @@ int print_rot13(va_list args)
 char *rot13(char *str)
 {
 
-	char *str_copy = malloc(strlen(str));
+	char *str_copy = malloc(strlen(str) + 1);
 
 	char alphabet[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 
 	char rot13Alpha[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 
 	int i, j;
+
+	if (str_copy == NULL)
+		return (NULL);
 
 	for (i = 0; str[i]; i++)
 	{
@@ -63,6 +66,8 @@ char *rot13(char *str)
 			str_copy[i] = str[i];
 		}
 	}
+
+	str_copy[strlen(str)] = '\0';
 
 	return (str_copy);
 }
