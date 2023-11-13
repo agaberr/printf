@@ -80,7 +80,7 @@ int main(void)
 	_printf("%S\n", "Best\nSchool"); /*should print ->  Best\x0ASchool*/
 	/*printf("%d\n",printf("Edge: %c %s %%", 'X', NULL));*/
 	_printf("%r\n", "reversed string");
-	printf("%d\n",_printf("%R\n", "AZ az")); /*should print -> NMOPQR*/
+	printf("%d\n",_printf("%R\n", "AZ")); /*should print -> NMOPQR*/
 
 	/*_printf("Address:[%p]\n", addr);*/
     printf("Address:[%p]\n", addr);
