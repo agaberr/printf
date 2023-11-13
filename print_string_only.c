@@ -20,13 +20,19 @@ int print_string_only(va_list args)
 	while (*str != '\0')
 	{
 
+		if (str == NULL || *str == '\0') /*added by Chatgpt*/
+		{
+			break;
+		}
+
 		if (*str < 32 || *str >= 127)
-			count += print_non_alpha(*str++);
+			count += print_non_alpha(*str);
 		else
 		{
 			count++;
-		    _putchar(*str++);
+		    _putchar(*str);
 		}
+		str++;
 	}
 
 	return (count);

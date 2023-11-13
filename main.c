@@ -8,6 +8,10 @@ int main(void)
 
 	int len2;
 
+	void *addr;
+	addr = (void *)0x7ffe637541f0;
+
+
 	len = _printf("Let's try to printf a simple sentence.\n");
 	len2 = printf("Let's try to printf a simple sentence.\n");
 	 printf("%d\n",_printf("Length:[%d, %i]\n", len, len));
@@ -75,6 +79,9 @@ int main(void)
 	printf("%d\n",_printf("Edge: %c %s %%", 'X', NULL));
 	_printf("%S\n", "Best\nSchool"); /*should print ->  Best\x0ASchool*/
 	/*printf("%d\n",printf("Edge: %c %s %%", 'X', NULL));*/
+
+	/*_printf("Address:[%p]\n", addr);*/
+    printf("Address:[%p]\n", addr);
 
 	return (0);
 }
