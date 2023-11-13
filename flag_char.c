@@ -12,7 +12,6 @@ int flag_char(char flag)
 	switch (flag)
 	{
 		case '+':
-
 			_putchar('+');
 			return (1);
 

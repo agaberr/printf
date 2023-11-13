@@ -84,6 +84,7 @@ int main(void)
 	printf("%d\n",_printf("%R\n", "AZ")); /*should print -> NMOPQR*/
 
 	_printf("%+d\n", 42);  
+	_printf("%+d\n", -42);  
     _printf("% d\n", 42); 
     _printf("%#x\n", 255);
 

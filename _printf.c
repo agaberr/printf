@@ -11,13 +11,11 @@
 
 int _printf(const char *format, ...)
 {
-
 	int i, numChar = 0, flag_inc;
 
 	va_list args;
 
 	int (*print_func)(va_list) = NULL;
-
 
 	if (format == NULL || strlen(format) == 0)
 		return (0);
@@ -26,14 +24,10 @@ int _printf(const char *format, ...)
 
 	for (i = 0; format[i]; i++)
 	{
-
 		if (format[i] == '%')
 		{
 			if (format[i + 1] == '\0')
-			{
 				break;
-			}
-			
 			flag_inc = flag_char(format[i + 1]);
 
 			if (flag_inc != 0)
@@ -49,11 +43,7 @@ int _printf(const char *format, ...)
 			_putchar(format[i]);
 			numChar++;
 		}
-
 	}
-
 	va_end(args);
-
 	return (numChar);
-
 }
