@@ -44,6 +44,10 @@ char *rot13(char *str)
 	char rot13Alpha[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 
 	int i, j;
+	
+	if (str == NULL)
+		return(NULL);
+	str_copy = malloc(strlen(str) + 1);
 
 	if (str_copy == NULL)
 		return (NULL);
