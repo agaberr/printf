@@ -42,6 +42,8 @@ int print_string_only(va_list args);
 int print_rev_string(va_list args);
 int print_rot13(va_list args);
 
+int flag_char(char flag);
+
 int _printf(const char *format, ...);
 
 

@@ -12,7 +12,7 @@
 int _printf(const char *format, ...)
 {
 
-	int i, numChar = 0;
+	int i, numChar = 0, flag_inc;
 
 	va_list args;
 
@@ -33,9 +33,15 @@ int _printf(const char *format, ...)
 			{
 				break;
 			}
+			
+			flag_inc = flag_char(format[i + 1]);
+
+			if (flag_inc != 0)
+				i++;
 
 			print_func = get_print_func(format[i + 1]);
 			numChar += print_func(args);
+			numChar += flag_inc;
 			i++;
 		}
 		else
