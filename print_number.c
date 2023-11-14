@@ -8,12 +8,12 @@
 
 int num_recursion(int num);
 
-int print_number(va_list args)
+int print_number(va_list args, char *format)
 {
-
 	int num = va_arg(args, int);
 	int i, j;
 	char *min = "-2147483648";
+	(void)format;
 
 	if (num == 0)
 	{

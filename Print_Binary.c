@@ -2,18 +2,19 @@
 /**
 * Print_Binary - convert the unsigned int int binary and print it
 * @args: the unsigned int it takes
+* @format: format to print
 *
 * Return: number of printed digits.
 */
-int Print_Binary(va_list args)
+int Print_Binary(va_list args, char *format)
 {
-
 	unsigned int num = va_arg(args, unsigned int);
 
 	int bits[64];  /*Assuming 64-bit unsigned int*/
 	int index = 0;
 	int count = 0;
 	int i;
+	(void)format;
 
 	if (num == 0)
 	{

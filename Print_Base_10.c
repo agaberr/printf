@@ -2,11 +2,13 @@
 /**
 * Print_Base_10 - print an unsigned integer in base 10 (decimal).
 * @args: the unsigned int it takes
+* @format: format to print
 *
 * Return: number of printed digits.
 */
-int Print_Base_10(va_list args)
+int Print_Base_10(va_list args, char *format)
 {
+
 	unsigned int num = va_arg(args, unsigned int);
 
 	char digits[10];  /*Assuming a maximum of 10 digits for an unsigned int*/
@@ -16,6 +18,7 @@ int Print_Base_10(va_list args)
 	int count = 0;
 
 	int i = 0;
+	(void)format;
 
 	if (num == 0)
 	{

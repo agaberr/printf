@@ -2,12 +2,12 @@
 /**
 * Print_Base_16_lower - print an unsigned integer in base 16 (Hexa) Lower.
 * @args: the unsigned int it takes
+* @format: format to print
 *
 * Return: number of printed digits.
 */
-int Print_Base_16_lower(va_list args)
+int Print_Base_16_lower(va_list args, char *format)
 {
-
 	unsigned int num = va_arg(args, unsigned int);
 
 	int remainder;
@@ -19,6 +19,7 @@ int Print_Base_16_lower(va_list args)
 	int count = 0;
 
 	int i = 0;
+	(void)format;
 
 
 	if (num == 0)

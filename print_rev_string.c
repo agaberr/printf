@@ -9,12 +9,12 @@
 
 void _print_rev_recursion(char *s);
 
-int print_rev_string(va_list args)
+int print_rev_string(va_list args, char *format)
 {
-
 	char *s = va_arg(args, char *);
 
 	int n = strlen(s);
+	(void)format;
 
 	_print_rev_recursion(s);
 	return (n);

@@ -8,8 +8,8 @@
 
 int print_non_alpha(char c)
 {
-
 	int num = (int)c;
+
 
 	_putchar('\\');
 	_putchar('x');
@@ -21,15 +21,18 @@ int print_non_alpha(char c)
 /**
 * print_string_only - print string
 * @args: str to print
+* @format: format to print
 *
 * Return: number of character printed
 */
 
-int print_string_only(va_list args)
+int print_string_only(va_list args, char *format)
 {
 	char *str = va_arg(args, char *);
 
 	int count = 0;
+
+	(void)format;
 
 	if (str == NULL)
 		str = "(null)";

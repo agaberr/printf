@@ -7,7 +7,7 @@
 * Return: function pointer to the appropriate print function
 */
 
-int (*get_print_func(const char format))(va_list)
+int (*get_print_func(char *format))(va_list, char *)
 {
 	op_t ops[] = {
 		{'c', print_char},
@@ -27,13 +27,14 @@ int (*get_print_func(const char format))(va_list)
 	};
 
 	int i = 0;
+	int specifier_idx = strlen(format) - 1;
 
 	if (!format)
 		return (NULL);
 
 	while (ops[i].op)
 	{
-		if (format && ops[i].op == format)
+		if (format[specifier_idx] && ops[i].op == format[specifier_idx])
 			return (ops[i].f);
 		i++;
 	}

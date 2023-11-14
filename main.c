@@ -8,8 +8,8 @@ int main(void)
 
 	int len2;
 
-	void *addr;
-	addr = (void *)0x7ffe637541f0;
+	/*void *addr;*/
+	/*addr = (void *)0x7ffe637541f0;*/
 
 
 	len = _printf("Let's try to printf a simple sentence.\n");
@@ -81,7 +81,7 @@ int main(void)
 	printf("%d\n", _printf("%S\n", "Best\nSchool")); /*should print ->  15*/
 	/*printf("%d\n",printf("Edge: %c %s %%", 'X', NULL));*/
 	_printf("%r\n", "reversed string");
-	printf("%d\n",_printf("%R\n", "AZ")); /*should print -> NMOPQR*/
+	printf("%d\n",_printf("%R\n", "AZ")); /*should print -> */
 
 	_printf("%+d\n", 42);  
 	_printf("%+d\n", -42);  
@@ -90,7 +90,7 @@ int main(void)
 
 
 	/*_printf("Address:[%p]\n", addr);*/
-    printf("Address:[%p]\n", addr);
+    /*printf("Address:[%p]\n", addr);*/
 
 	return (0);
 }

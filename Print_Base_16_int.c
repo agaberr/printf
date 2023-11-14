@@ -18,7 +18,6 @@ int Print_Base_16_int(int num)
 
 	int i = 0;
 
-
 	if (num == 0)
 	{
 	_putchar(48);

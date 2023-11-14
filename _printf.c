@@ -11,32 +11,37 @@
 
 int _printf(const char *format, ...)
 {
-	int i, numChar = 0, flag_inc;
+	int i, numChar = 0;
+	char *arg_format = NULL;
+	int arg_format_idx;
 
 	va_list args;
 
-	int (*print_func)(va_list) = NULL;
+	int (*print_func)(va_list, char *format) = NULL;
 
 	if (format == NULL || strlen(format) == 0)
 		return (0);
-
 	va_start(args, format);
 
 	for (i = 0; format[i]; i++)
 	{
 		if (format[i] == '%')
 		{
+			arg_format_idx = 0;
+			arg_format = malloc((sizeof(char) * strlen(format)) + 1);
 			if (format[i + 1] == '\0')
 				break;
-			flag_inc = flag_char(format[i + 1]);
-
-			if (flag_inc != 0)
+			while (!is_specifier(format[i + 1]) && format[i + 1] != '\0')
+			{
+				arg_format[arg_format_idx++] = format[i + 1];
 				i++;
-
-			print_func = get_print_func(format[i + 1]);
-			numChar += print_func(args);
-			numChar += flag_inc;
+			}
+			arg_format[arg_format_idx] = format[i + 1];
+			arg_format[arg_format_idx + 1] = '\0';
+			print_func = get_print_func(arg_format);
+			numChar += print_func(args, arg_format);
 			i++;
+			free(arg_format);
 		}
 		else
 		{
