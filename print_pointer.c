@@ -18,7 +18,11 @@ int print_pointer(va_list args, char *format)
 	/* Print "0x" prefix*/
 	_putchar('0');
 	_putchar('x');
-	count += 2;
+	_putchar('0');
+	_putchar('0');
+	_putchar('0');
+	_putchar('0');
+	count += 6;
 
 	/* Print hexadecimal representation of the address*/
 
