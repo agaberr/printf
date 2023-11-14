@@ -15,6 +15,8 @@ int is_specifier(char c)
 	{
 		if (c == specifiers[i] || c == '%')
 			return (1);
+		else if ((c >= '0' && c <= '9') || c == '+' || c == '-' || c == '#')
+			return (2);
 	}
 
 	return (0);

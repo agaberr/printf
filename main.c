@@ -87,6 +87,7 @@ int main(void)
 	_printf("%d\n", -42);  
     _printf("%d\n", 42); 
     _printf("%#x\n", 255);
+    _printf("%  %d\n", 12);
 
 
 	/*_printf("Address:[%p]\n", addr);*/
