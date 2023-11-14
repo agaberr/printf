@@ -7,6 +7,8 @@ int main(void)
 	int len;
 
 	int len2;
+	int variable = 42;
+	int *ptr = &variable;
 
 	/*void *addr;*/
 	/*addr = (void *)0x7ffe637541f0;*/
@@ -93,6 +95,13 @@ int main(void)
 
 	_printf("15%5s\n", "hhkbgjhvi");
 	_printf("%-5s51\n", "hhkbgjhvi");
+
+    printf("%d\n",_printf("The address is: %p\n", (const void *)ptr));
+    printf("%d\n",printf("The address is: %p\n", (const void *)ptr));
+    printf("%d\n",_printf("The address is: %p\n", NULL));
+    printf("%d\n",printf("The address is: %p\n", NULL));
+    printf("%d\n",_printf("The address is: %p\n", (void *)(ptr - 1)));
+    printf("%d\n",printf("The address is: %p\n", (void *)(ptr - 1)));
 
 
 	/*_printf("Address:[%p]\n", addr);*/

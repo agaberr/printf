@@ -41,6 +41,7 @@ int Print_Base_8(va_list args, char *format);
 int print_string_only(va_list args, char *format);
 int print_rev_string(va_list args, char *format);
 int print_rot13(va_list args, char *format);
+int print_pointer(va_list args, char *format);
 
 int flag_char(char flag, int num);
 int is_specifier(char c);
