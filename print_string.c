@@ -9,18 +9,23 @@
 int print_string(va_list args, char *format)
 {
 	char *str = va_arg(args, char *);
-	int count = 0;
-	(void)format;
+	int i;
+	int width = get_width(format);
 
 	if (str == NULL)
 		str = "(null)";
 
-	while (*str != '\0')
-	{
-		count++;
-		_putchar(*str++);
+	if (width > 0)
+		print_space(strlen(str), width);
 
+
+	for (i = 0; str[i]; i++)
+	{
+		_putchar(str[i]);
 	}
 
-	return (count);
+	if (width < 0)
+		print_space(strlen(str), -width);
+
+	return (width);
 }

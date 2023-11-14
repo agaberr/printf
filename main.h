@@ -44,6 +44,8 @@ int print_rot13(va_list args, char *format);
 
 int flag_char(char flag, int num);
 int is_specifier(char c);
+int get_width(char *format);
+int print_space(int len, int width);
 
 int _printf(const char *format, ...);
 

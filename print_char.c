@@ -10,8 +10,13 @@
 int print_char(va_list args, char *format)
 {
 	char c = va_arg(args, int);
-	(void)format;
+	int width = get_width(format);
 
+	if (width > 0)
+		print_space(1, width);
 	_putchar(c);
-	return (1);
+	if (width < 0)
+		print_space(1, -width);
+
+	return (width);
 }

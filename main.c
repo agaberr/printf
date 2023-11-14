@@ -88,6 +88,12 @@ int main(void)
     _printf("% d\n", 42); 
     _printf("%#x\n", 255);
 
+	_printf("15%5c\n", 'A');
+	_printf("%-5c51\n", 'A');
+
+	_printf("15%5s\n", "hhkbgjhvi");
+	_printf("%-5s51\n", "hhkbgjhvi");
+
 
 	/*_printf("Address:[%p]\n", addr);*/
     /*printf("Address:[%p]\n", addr);*/
