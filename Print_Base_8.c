@@ -11,13 +11,17 @@ int Print_Base_8(va_list args, char *format)
 
 
 	unsigned int num = va_arg(args, unsigned int);
+	int width = get_width(format);
+	unsigned int size = get_base_8_len(num);
 
 	/*Assuming a maximum of 12 Octal  digits for an unsigned int*/
 	char Oct_digits[12];
 	int index = 0;
 	int i = 0;
 	int count = 0;
-	(void)format;
+
+	if (width > 0)
+		print_space(size, width);
 
 	if (num == 0)
 	{
@@ -37,5 +41,9 @@ int Print_Base_8(va_list args, char *format)
 		_putchar(Oct_digits[i]);
 		count++;
 	}
-	return (count);
+
+	if (width < 0)
+		print_space(size, -width);
+
+	return (count + width);
 }

@@ -11,9 +11,12 @@ int print_string(va_list args, char *format)
 	char *str = va_arg(args, char *);
 	int i;
 	int width = get_width(format);
+	int size;
 
 	if (str == NULL)
 		str = "(null)";
+
+	size = strlen(str);
 
 	if (width > 0)
 		print_space(strlen(str), width);
@@ -25,7 +28,12 @@ int print_string(va_list args, char *format)
 	}
 
 	if (width < 0)
+	{
 		print_space(strlen(str), -width);
+		width *= -1;
+	}
 
-	return (width);
+	if (width > size)
+		return (width);
+	return (size);
 }

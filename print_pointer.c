@@ -8,6 +8,7 @@ int null_ptr(void)
 {
 	int i;
 	int count = 0;
+
 	for (i = 0; i < 5; ++i)
 	{
 		_putchar("(nil)"[i]);
@@ -29,14 +30,16 @@ int print_pointer(va_list args, char *format)
 	int shift, digit;
 	int count = 2;
 	int nonZeroEncountered = 0;
-	(void)format;
+	int size = get_pointer_len(ptr);
+	int width = get_width(format);
+
 
 	if (ptr == NULL)
 		return (null_ptr());
-	/* Print "0x" prefix*/
+	if (width > 0)
+		print_space(size, width);
 	_putchar('0');
 	_putchar('x');
-	/* Print hexadecimal representation of the address*/
 	shift = sizeof(void *) * 8 - 4;  /* Adjust shift for 32 or 64-bit systems*/
 	while (shift >= 0)
 	{
@@ -54,5 +57,12 @@ int print_pointer(va_list args, char *format)
 		_putchar('0');
 		count++;
 	}
-	return (count);
+	if (width < 0)
+	{
+		print_space(size, -width);
+		width *= -1;
+	}
+	if (width > size)
+		return (width);
+	return (size);
 }

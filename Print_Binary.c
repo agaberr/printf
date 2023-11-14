@@ -9,12 +9,18 @@
 int Print_Binary(va_list args, char *format)
 {
 	unsigned int num = va_arg(args, unsigned int);
+	int width = get_width(format);
+	unsigned int size = get_binary_len(num);
+
+
 
 	int bits[64];  /*Assuming 64-bit unsigned int*/
 	int index = 0;
 	int count = 0;
 	int i;
-	(void)format;
+
+	if (width > 0)
+		print_space(size, width);
 
 	if (num == 0)
 	{
@@ -32,5 +38,14 @@ int Print_Binary(va_list args, char *format)
 		_putchar(48 + bits[i]);
 		count++;
 	}
-	return (count);
+	if (width < 0)
+	{
+		print_space(size, -width);
+		width *= -1;
+	}
+
+	if ((unsigned int)width > size)
+		return (width);
+	else
+		return (size);
 }

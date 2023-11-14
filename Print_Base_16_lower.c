@@ -8,19 +8,17 @@
 */
 int Print_Base_16_lower(va_list args, char *format)
 {
-	unsigned int num = va_arg(args, unsigned int);
-	int k, i = 0;
-	char flag;
-	int remainder;
-	char hexDigits[16];
-	int index = 0, count = 0;
+	unsigned int num = va_arg(args, unsigned int), size = get_base_16_len(num);
+	int width = get_width(format), k, i = 0, remainder, index = 0, count = 0;
+	char flag, hexDigits[16];
 
+	if (width > 0)
+		print_space(size, width);
 	if (num == 0)
 	{
 	_putchar(48);
 		return (1);
 	}
-
 	for (k = 0; format[k]; k++)
 	{
 		if (format[k] == '+' || format[k] == '#' || format[k] == ' ')
@@ -30,8 +28,6 @@ int Print_Base_16_lower(va_list args, char *format)
 			break;
 		}
 	}
-
-
 	while (num > 0)
 	{
 	remainder = num % 16;
@@ -39,11 +35,17 @@ int Print_Base_16_lower(va_list args, char *format)
 	? ('0' + remainder) : ('a' + remainder - 10);
 	num /= 16;
 	}
-
 	for (i = index - 1; i >= 0; i--)
 	{
 	_putchar(hexDigits[i]);
 	count++;
 	}
+	if (width < 0)
+	{
+		print_space(size, -width);
+		width *= -1;
+	}
+	if ((unsigned int)width > size)
+		return (width);
 	return (count);
 }

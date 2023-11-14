@@ -16,7 +16,12 @@ int print_char(va_list args, char *format)
 		print_space(1, width);
 	_putchar(c);
 	if (width < 0)
+	{
 		print_space(1, -width);
+		width *= -1;
+	}
 
-	return (width);
+	if (width > 1)
+		return (width);
+	return (1);
 }

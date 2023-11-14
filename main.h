@@ -47,6 +47,11 @@ int flag_char(char flag, int num);
 int is_specifier(char c);
 int get_width(char *format);
 int print_space(int len, int width);
+int get_base_8_len(int num);
+int get_base_16_len(int num);
+int get_binary_len(int num);
+int get_num_len(int num);
+int get_pointer_len(const void *ptr);
 
 int _printf(const char *format, ...);
 

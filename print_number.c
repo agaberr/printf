@@ -14,6 +14,8 @@ int print_number(va_list args, char *format)
 	int i = 0, j, k;
 	char flag;
 	char *min = "-2147483648";
+	int width = get_width(format);
+
 
 	for (k = 0; format[k]; k++)
 	{
@@ -27,20 +29,48 @@ int print_number(va_list args, char *format)
 
 	if (num == 0)
 	{
+		if (width > 0)
+			print_space(1, width);
 		_putchar('0');
+		if (width < 0)
+		{
+			print_space(1, -width);
+			width *= -1;
+		}
+		if (width > 1)
+			return (width);
 		return (1);
 	}
 
+
 	if (num == INT_MIN)
 	{
+		if (width > 0)
+			print_space(strlen(min), width);
 		for (j = 0; min[j]; j++)
 		{
-			_putchar(min[j]);
+		_putchar(min[j]);
 		}
+		if (width < 0)
+		{
+			print_space(strlen(min), -width);
+			width *= -1;
+		}
+		if (width > j)
+			return (width);
 		return (j);
 	}
 
+	if (width > 0)
+		print_space(get_num_len(num), width);
 	i = num_recursion(num);
+	if (width < 0)
+	{
+		print_space(get_num_len(num), -width);
+		width *= -1;
+	}
+	if (width > i)
+		return (width);
 	return (i);
 }
 /**

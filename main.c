@@ -90,11 +90,6 @@ int main(void)
     _printf("% d\n", 42); 
     _printf("%#x\n", 255);
 
-	_printf("15%5c\n", 'A');
-	_printf("%-5c51\n", 'A');
-
-	_printf("15%5s\n", "hhkbgjhvi");
-	_printf("%-5s51\n", "hhkbgjhvi");
 
     printf("%d\n",_printf("The address is: %p\n", (const void *)ptr));
     printf("%d\n",printf("The address is: %p\n", (const void *)ptr));
@@ -102,6 +97,39 @@ int main(void)
     printf("%d\n",printf("The address is: %p\n", NULL));
     printf("%d\n",_printf("The address is: %p\n", (void *)(ptr - 1)));
     printf("%d\n",printf("The address is: %p\n", (void *)(ptr - 1)));
+
+
+	_printf("15%5c\n", 'A');
+	_printf("%-5c51\n", 'A');
+
+	_printf("15%5s\n", "hvi");
+	_printf("%-5s51\n", "hvi");
+
+	_printf("51%5d\n", 12);
+	_printf("%-5d51\n", 12);
+
+	_printf("51%5b\n", 10);
+	_printf("%-5b51\n", 10);
+
+	_printf("51%5u\n", 105);
+	_printf("%-5u51\n", 121);
+
+	_printf("51%5x\n", 255);
+	_printf("%-5x51\n", 121);
+
+	_printf("51%5X\n", 255);
+	_printf("%-5X51\n", 155);
+
+printf("****************************************************************\n");
+
+
+
+
+
+
+
+
+
 
 
 	/*_printf("Address:[%p]\n", addr);*/
