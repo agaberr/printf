@@ -37,7 +37,8 @@ int print_pointer(va_list args, char *format)
 		shift -= 4;
 	}
 
-	if (!nonZeroEncountered){
+	if (!nonZeroEncountered)
+	{
 		_putchar('0');
 		count++;
 	}
