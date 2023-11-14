@@ -123,7 +123,7 @@ int main(void)
 printf("****************************************************************\n");
 
 
-	printf("%d\n",_printf("%R\n", "ARZ")); /*should print -> */
+	printf("%d\n",_printf("%R\n", "ABC")); /*should print -> */
 
 
 
