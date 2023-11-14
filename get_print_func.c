@@ -34,7 +34,7 @@ int (*get_print_func(char *format))(va_list, char *)
 
 	while (ops[i].op)
 	{
-		if (format[specifier_idx] && ops[i].op == format[specifier_idx])
+		if (ops[i].op == format[specifier_idx])
 			return (ops[i].f);
 		i++;
 	}

@@ -17,7 +17,7 @@ int _printf(const char *format, ...)
 
 	va_list args;
 
-	int (*print_func)(va_list, char *format) = NULL;
+	int (*print_func)(va_list, char *) = NULL;
 
 	if (format == NULL || strlen(format) == 0)
 		return (0);
@@ -41,7 +41,6 @@ int _printf(const char *format, ...)
 			print_func = get_print_func(arg_format);
 			numChar += print_func(args, arg_format);
 			i++;
-			free(arg_format);
 		}
 		else
 		{
@@ -49,6 +48,7 @@ int _printf(const char *format, ...)
 			numChar++;
 		}
 	}
+	free(arg_format);
 	va_end(args);
 	return (numChar);
 }
