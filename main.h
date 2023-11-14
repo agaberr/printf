@@ -15,14 +15,14 @@ int _putchar(char c);
 /**
 * struct op - the struct of op
 *
-* @op: operator
+* @specifier: operator
 * @f: function
 */
 typedef struct op
 {
 	char specifier;
 
-	int (*f)(va_list, char *format);
+	int (*f)(va_list, char *);
 
 } op_t;
 
