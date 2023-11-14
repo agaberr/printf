@@ -41,6 +41,7 @@ int _printf(const char *format, ...)
 			print_func = get_print_func(arg_format);
 			numChar += print_func(args, arg_format);
 			i++;
+			free(arg_format);
 		}
 		else
 		{
@@ -48,7 +49,6 @@ int _printf(const char *format, ...)
 			numChar++;
 		}
 	}
-	free(arg_format);
 	va_end(args);
 	return (numChar);
 }
