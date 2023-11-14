@@ -23,6 +23,7 @@ int (*get_print_func(char *format))(va_list, char *)
 		{'S', print_string_only},
 		{'r', print_rev_string},
 		{'R', print_rot13},
+		{'p', print_pointer},
 		{'\0', NULL}
 	};
 
