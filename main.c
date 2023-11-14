@@ -93,6 +93,10 @@ int main(void)
 
     printf("%d\n",_printf("The address is: %p\n", (const void *)ptr));
     printf("%d\n",printf("The address is: %p\n", (const void *)ptr));
+    printf("%d\n",_printf("The address is: %p\n", NULL));
+    printf("%d\n",printf("The address is: %p\n", NULL));
+    printf("%d\n",_printf("The address is: %p\n", (void *)(ptr - 1)));
+    printf("%d\n",printf("The address is: %p\n", (void *)(ptr - 1)));
 
 
 	/*_printf("Address:[%p]\n", addr);*/
