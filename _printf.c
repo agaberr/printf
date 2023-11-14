@@ -12,7 +12,7 @@
 int _printf(const char *format, ...)
 {
 	int i, numChar = 0;
-	char *arg_format = NULL;
+	char arg_format[100];
 	int arg_format_idx;
 	va_list args;
 	int (*print_func)(va_list, char *) = NULL;
@@ -25,7 +25,6 @@ int _printf(const char *format, ...)
 		if (format[i] == '%' && is_specifier(format[i + 1]))
 		{
 			arg_format_idx = 0;
-			arg_format = malloc(strlen(format) + 1);
 			if (format[i + 1] == '\0')
 				break;
 			while (is_specifier(format[i + 1]) != 1 && format[i + 1] != '\0')
@@ -38,7 +37,6 @@ int _printf(const char *format, ...)
 			print_func = get_print_func(arg_format);
 			numChar += print_func(args, arg_format);
 			i++;
-			free(arg_format);
 		}
 		else
 		{
