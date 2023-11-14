@@ -28,7 +28,7 @@ int _printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			arg_format_idx = 0;
-			arg_format = malloc((sizeof(char) * strlen(format)) + 1);
+			arg_format = malloc(strlen(format) + 1);
 			if (format[i + 1] == '\0')
 				break;
 			while (!is_specifier(format[i + 1]) && format[i + 1] != '\0')

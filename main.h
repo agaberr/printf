@@ -20,7 +20,7 @@ int _putchar(char c);
 */
 typedef struct op
 {
-	char op;
+	char specifier;
 
 	int (*f)(va_list, char *format);
 

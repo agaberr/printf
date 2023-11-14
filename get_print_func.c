@@ -31,12 +31,12 @@ int (*get_print_func(char *format))(va_list, char *)
 	if (!format)
 		return (NULL);
 
-	while (ops[i].op)
+	while (ops[i].specifier)
 	{
 		j = 0;
 		while (format[j])
 		{
-			if (ops[i].op == format[j])
+			if (ops[i].specifier == format[j])
 				return (ops[i].f);
 			j++;
 		}
