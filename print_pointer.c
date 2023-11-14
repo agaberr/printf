@@ -14,17 +14,18 @@ int print_pointer(va_list args, char *format)
 	int shift, digit;
 	int count = 0;
 	(void)format;
-	
+
 	/* Print "0x" prefix*/
 	_putchar('0');
 	_putchar('x');
 	count += 2;
-	
+
 	/* Print hexadecimal representation of the address*/
-	
+
 	shift = sizeof(void *) * 8 - 4;  /* Adjust shift for 32 or 64-bit systems*/
-	
-	while (shift >= 0) {
+
+	while (shift >= 0)
+	{
 		digit = (address >> shift) & 0xF;
 		_putchar(digit < 10 ? '0' + digit : 'a' + digit - 10);
 		count++;
