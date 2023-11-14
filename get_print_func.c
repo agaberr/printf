@@ -26,16 +26,20 @@ int (*get_print_func(char *format))(va_list, char *)
 		{'\0', NULL}
 	};
 
-	int i = 0;
-	int specifier_idx = strlen(format) - 1;
+	int i = 0, j;
 
 	if (!format)
 		return (NULL);
 
 	while (ops[i].op)
 	{
-		if (ops[i].op == format[specifier_idx])
-			return (ops[i].f);
+		j = 0;
+		while (format[j])
+		{
+			if (ops[i].op == format[j])
+				return (ops[i].f);
+			j++;
+		}
 		i++;
 	}
 
