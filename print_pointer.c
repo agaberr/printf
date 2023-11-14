@@ -1,5 +1,21 @@
 #include "main.h"
 /**
+* null_ptr - print (nil) if it is called
+*
+* Return: number of characters of (nil)
+*/
+int null_ptr(void)
+{
+	int i;
+	int count = 0;
+	for (i = 0; i < 5; ++i)
+	{
+		_putchar("(nil)"[i]);
+		count++;
+	}
+	return (count);
+}
+/**
 * print_pointer - print address
 * @args: address to print
 * @format: format to print
@@ -10,24 +26,16 @@ int print_pointer(va_list args, char *format)
 {
 	const void *ptr = va_arg(args, char *);
 	unsigned long address = (unsigned long)ptr;
-	int shift, digit, i;
-	int count = 0;
+	int shift, digit;
+	int count = 2;
 	int nonZeroEncountered = 0;
 	(void)format;
 
 	if (ptr == NULL)
-	{
-		for (i = 0; i < 5; ++i)
-		{
-			_putchar("(nil)"[i]);
-			count++;
-		}
-		return (count);
-	}
+		return (null_ptr());
 	/* Print "0x" prefix*/
 	_putchar('0');
 	_putchar('x');
-	count += 2;
 	/* Print hexadecimal representation of the address*/
 	shift = sizeof(void *) * 8 - 4;  /* Adjust shift for 32 or 64-bit systems*/
 	while (shift >= 0)
