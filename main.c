@@ -83,11 +83,10 @@ int main(void)
 	_printf("%r\n", "reversed string");
 	printf("%d\n",_printf("%R\n", "AZ")); /*should print -> */
 
-	_printf("%d\n", 44687412);  
-	_printf("%d\n", -42);  
-    _printf("%d\n", 42); 
+	_printf("%+d\n", 44687412);  
+	_printf("%+d\n", -42);  
+    _printf("% d\n", 42); 
     _printf("%#x\n", 255);
-    _printf("%  %d\n", 12);
 
 
 	/*_printf("Address:[%p]\n", addr);*/

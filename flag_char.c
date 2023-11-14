@@ -2,17 +2,19 @@
 /**
 * flag_char - print flags
 * @flag: flag to print
+* @num: number to print
 *
 * Return: number of character printed
 */
 
-int flag_char(char flag)
+int flag_char(char flag, int num)
 {
 
 	switch (flag)
 	{
 		case '+':
-			_putchar('+');
+			if (num > 0)
+				_putchar('+');
 			return (1);
 
 		case ' ':

@@ -11,10 +11,19 @@ int num_recursion(int num);
 int print_number(va_list args, char *format)
 {
 	int num = va_arg(args, int);
-	int i, j;
+	int i = 0, j, k;
+	char flag;
 	char *min = "-2147483648";
 
-	(void)format;
+	for (k = 0; format[k]; k++)
+	{
+		if (format[k] == '+' || format[k] == '#' || format[k] == ' ')
+		{
+			flag = format[k];
+			i += flag_char(flag, num);
+			break;
+		}
+	}
 
 	if (num == 0)
 	{

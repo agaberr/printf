@@ -34,6 +34,7 @@ int _printf(const char *format, ...)
 			}
 			arg_format[arg_format_idx] = format[i + 1];
 			arg_format[arg_format_idx + 1] = '\0';
+			/*printf("ARGS: %s\n", arg_format);*/
 			print_func = get_print_func(arg_format);
 			numChar += print_func(args, arg_format);
 			i++;

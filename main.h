@@ -42,7 +42,7 @@ int print_string_only(va_list args, char *format);
 int print_rev_string(va_list args, char *format);
 int print_rot13(va_list args, char *format);
 
-int flag_char(char flag);
+int flag_char(char flag, int num);
 int is_specifier(char c);
 
 int _printf(const char *format, ...);
