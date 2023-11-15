@@ -10,7 +10,7 @@ int Print_Binary(va_list args, char *format)
 {
 	unsigned int num = va_arg(args, unsigned int);
 	int x = 0;
-		int *is_zero = &x;
+	int *is_zero = &x;
 	int width = get_width(format, is_zero);
 	unsigned int size = get_binary_len(num);
 
@@ -47,5 +47,5 @@ int Print_Binary(va_list args, char *format)
 	if ((unsigned int)width > size)
 		return (width);
 	else
-		return (size);
+		return (count);
 }
