@@ -105,7 +105,7 @@ int main(void)
 	_printf("15%5s\n", "hvi");
 	_printf("%-5s51\n", "hvi");
 
-	_printf("51%5d\n", 12);
+	_printf("51%05d\n", 12);
 	_printf("%-5d51\n", 12);
 
 	_printf("51%5b\n", 10);
@@ -114,8 +114,8 @@ int main(void)
 	_printf("51%5u\n", 105);
 	_printf("%-5u51\n", 121);
 
-	_printf("51%5x\n", 255);
-	_printf("%-5x51\n", 121);
+	_printf("51%5X\n", 0);
+	_printf("%-05x51\n", 121);
 
 	_printf("51%5X\n", 255);
 	_printf("%-5X51\n", 155);

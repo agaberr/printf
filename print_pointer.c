@@ -28,16 +28,16 @@ int print_pointer(va_list args, char *format)
 	const void *ptr = va_arg(args, char *);
 	unsigned long address = (unsigned long)ptr;
 	int shift, digit;
-	int count = 2;
-	int nonZeroEncountered = 0;
+	int count = 2, nonZeroEncountered = 0;
 	int size = get_pointer_len(ptr);
-	int width = get_width(format);
-
+	int x = 0;
+	int *is_zero = &x;
+	int width = get_width(format, is_zero);
 
 	if (ptr == NULL)
 		return (null_ptr());
 	if (width > 0)
-		print_space(size, width);
+		print_space(size, width, *is_zero);
 	_putchar('0');
 	_putchar('x');
 	shift = sizeof(void *) * 8 - 4;  /* Adjust shift for 32 or 64-bit systems*/
@@ -59,7 +59,7 @@ int print_pointer(va_list args, char *format)
 	}
 	if (width < 0)
 	{
-		print_space(size, -width);
+		print_space(size, -width, *is_zero);
 		width *= -1;
 	}
 	if (width > size)

@@ -46,8 +46,8 @@ int print_pointer(va_list args, char *format);
 
 int flag_char(char flag, int num);
 int is_specifier(char c);
-int get_width(char *format);
-int print_space(int len, int width);
+int get_width(char *format, int *is_zero);
+int print_space(int len, int width, int is_zero);
 int get_base_8_len(int num);
 int get_base_16_len(int num);
 int get_binary_len(int num);

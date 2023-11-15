@@ -10,7 +10,9 @@ int print_string(va_list args, char *format)
 {
 	char *str = va_arg(args, char *);
 	int i;
-	int width = get_width(format);
+	int x = 0;
+	int *is_zero = &x;
+	int width = get_width(format, is_zero);
 	int size;
 
 	if (str == NULL)
@@ -19,7 +21,7 @@ int print_string(va_list args, char *format)
 	size = strlen(str);
 
 	if (width > 0)
-		print_space(strlen(str), width);
+		print_space(strlen(str), width, *is_zero);
 
 
 	for (i = 0; str[i]; i++)
@@ -29,7 +31,7 @@ int print_string(va_list args, char *format)
 
 	if (width < 0)
 	{
-		print_space(strlen(str), -width);
+		print_space(strlen(str), -width, *is_zero);
 		width *= -1;
 	}
 

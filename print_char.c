@@ -10,14 +10,16 @@
 int print_char(va_list args, char *format)
 {
 	char c = va_arg(args, int);
-	int width = get_width(format);
+	int x = 0;
+		int *is_zero = &x;
+	int width = get_width(format, is_zero);
 
 	if (width > 0)
-		print_space(1, width);
+		print_space(1, width, *is_zero);
 	_putchar(c);
 	if (width < 0)
 	{
-		print_space(1, -width);
+		print_space(1, -width, *is_zero);
 		width *= -1;
 	}
 
